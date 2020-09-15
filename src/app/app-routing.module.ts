@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'reactive-login',
     loadChildren: () => import('./reactive-login/reactive-login.module').then( m => m.ReactiveLoginPageModule)
   },
+  {
+    path: 'reactive-signup',
+    loadChildren: () => import('./reactive-signup/reactive-signup.module').then( m => m.ReactiveSignupPageModule)
+  },
 ];
 
 @NgModule({
