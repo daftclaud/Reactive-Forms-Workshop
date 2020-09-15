@@ -31,6 +31,12 @@ export class ReactiveSignupPage implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.minLength(6), Validators.required]],
       confirm: ['', [Validators.minLength(6), Validators.required]],
+      address: this.fb.group({
+        street: [''],
+        city: [''],
+        state: [''],
+        zip: [null, Validators.maxLength(5)]
+      })
     },
     { validators: passwordsMatchValidator }
   );
