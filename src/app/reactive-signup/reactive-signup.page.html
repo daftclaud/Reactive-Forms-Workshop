@@ -18,31 +18,6 @@
         <ion-input type="password" formControlName="confirm"></ion-input>
         <ion-text *ngIf="(confirm.dirty || confirm.touched) && loginForm.errors?.dontMatch" color="danger">Password dont match</ion-text>
       </ion-item>
-      <ion-item formGroupName="address">
-        <ion-label>Address</ion-label>
-        <ion-grid>
-         <ion-row>
-           <ion-col>
-             <ion-label position="floating">Street</ion-label>
-             <ion-input formControlName="street"></ion-input>
-           </ion-col>
-           <ion-col>
-            <ion-label position="floating">City</ion-label>
-            <ion-input formControlName="city"></ion-input>
-           </ion-col>
-         </ion-row>
-         <ion-row>
-           <ion-col>
-            <ion-label position="floating">State</ion-label>
-            <ion-input formControlName="state"></ion-input>
-           </ion-col>
-           <ion-col>
-            <ion-label position="floating">Zip</ion-label>
-            <ion-input formControlName="zip" type="number"></ion-input>
-           </ion-col>
-         </ion-row>
-        </ion-grid>
-      </ion-item>
       <ion-button
         [disabled]="!loginForm.valid"
         class="ion-margin"
