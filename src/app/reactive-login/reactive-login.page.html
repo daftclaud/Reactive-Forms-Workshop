@@ -1,20 +1,21 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <img class="ion-text-center" src="../../assets/undraw_Login_re_4vu2.svg" />
-    <div class="ion-padding">
+    <form [formGroup]="loginForm" class="ion-padding">
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
       <ion-button
+        [disabled]="!loginForm.valid"
         class="ion-margin"
         expand="block"
         >Submit</ion-button
       >
-    </div>
+    </form>
   </div>
 </ion-content>
