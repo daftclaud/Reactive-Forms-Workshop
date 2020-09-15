@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'template-login',
     loadChildren: () => import('./template-login/template-login.module').then( m => m.TemplateLoginPageModule)
   },
+  {
+    path: 'reactive-login',
+    loadChildren: () => import('./reactive-login/reactive-login.module').then( m => m.ReactiveLoginPageModule)
+  },
 ];
 
 @NgModule({
