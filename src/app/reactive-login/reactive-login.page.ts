@@ -14,4 +14,8 @@ export class ReactiveLoginPage implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {}
+
+  get password() {
+    return this.loginForm.controls.password;
+  }
 }

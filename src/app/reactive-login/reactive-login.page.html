@@ -9,6 +9,7 @@
       <ion-item>
         <ion-label position="floating">Password</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
+        <ion-text *ngIf="password.value && password.invalid && (password.dirty || password.touched)" color="danger">Password needs to be at least 6 characters</ion-text>
       </ion-item>
       <ion-button
         [disabled]="!loginForm.valid"
