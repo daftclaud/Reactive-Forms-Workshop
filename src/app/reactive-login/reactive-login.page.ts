@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-login',
@@ -7,11 +7,11 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./reactive-login.page.scss'],
 })
 export class ReactiveLoginPage implements OnInit {
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.email, Validators.required]),
-    password: new FormControl('', [Validators.minLength(6)])
+  loginForm = this.fb.group({
+    email: ['', [Validators.email, Validators.required]],
+    password: ['', [Validators.minLength(6), Validators.required]]
   });
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {}
 }
