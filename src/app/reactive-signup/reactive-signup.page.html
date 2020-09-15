@@ -5,6 +5,8 @@
       <ion-item>
         <ion-label position="floating">Email</ion-label>
         <ion-input type="email" formControlName="email"></ion-input>
+        <ion-spinner *ngIf="email.status === 'PENDING'"></ion-spinner>
+        <ion-text color="danger" *ngIf="email.errors?.emailTaken">Sorry, this email has already been taken. Please sign up with a different email.</ion-text>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Password</ion-label>
