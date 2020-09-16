@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, ValidatorFn, FormGroup, ValidationErrors } from '@angular/forms';
 
-const passwordsMatchValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-  const password = control.get('password');
-  const confirm = control.get('confirm');
-
-  return password && confirm && password.value === confirm.value ? null : { dontMatch: true };
-};
-
 @Component({
   selector: 'app-reactive-signup',
   templateUrl: './reactive-signup.page.html',
@@ -18,7 +11,7 @@ export class ReactiveSignupPage implements OnInit {
     email: ['', [Validators.email, Validators.required]],
     password: ['', [Validators.minLength(6), Validators.required]],
     confirm: ['', [Validators.minLength(6), Validators.required]]
-  }, {validators: passwordsMatchValidator});
+  });
 
   constructor(private fb: FormBuilder) { }
 
