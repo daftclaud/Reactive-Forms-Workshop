@@ -35,15 +35,9 @@ export class ReactiveSignupPage implements OnInit {
     { validators: passwordsMatchValidator }
   );
 
-  constructor(private fb: FormBuilder, private usernameSvc: UsernameService) {}
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {
-    this.loginForm.controls.email.setAsyncValidators((ctrl: AbstractControl) =>
-      this.usernameSvc
-        .emailTaken(ctrl.value)
-        .then((isTaken) => (isTaken ? { emailTaken: true } : null))
-    );
-  }
+  ngOnInit() {}
 
   get email() {
     return this.loginForm.controls.email;
