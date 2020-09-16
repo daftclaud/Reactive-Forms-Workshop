@@ -18,6 +18,13 @@
         <ion-input type="password" formControlName="confirm"></ion-input>
         <ion-text *ngIf="(confirm.dirty || confirm.touched) && loginForm.errors?.dontMatch" color="danger">Password dont match</ion-text>
       </ion-item>
+      <ion-button expand="block" (click)="addApodo()">Add Apodo</ion-button>
+      <div formArrayName="apodos" *ngFor="let apodo of apodos.controls; let i = index">
+        <ion-item>
+          <ion-label>Apodo #{{i}}</ion-label>
+          <ion-input [formControlName]="i"></ion-input>
+        </ion-item>
+      </div>
       <ion-button
         [disabled]="!loginForm.valid"
         class="ion-margin"
