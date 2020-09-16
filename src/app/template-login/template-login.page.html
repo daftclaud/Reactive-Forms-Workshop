@@ -1,41 +1,21 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <img class="ion-text-center" src="../../assets/undraw_Login_re_4vu2.svg" />
-    <form #loginForm="ngForm" class="ion-padding">
+    <form class="ion-padding">
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input
-          type="email"
-          [(ngModel)]="email"
-          name="email"
-          email
-          required
-        ></ion-input>
+        <ion-input type="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input
-          type="password"
-          [(ngModel)]="password"
-          name="password"
-          required
-          minlength="6"
-        ></ion-input>
+        <ion-input type="password"></ion-input>
       </ion-item>
       <ion-button
-        [disabled]="!loginForm.valid"
         class="ion-margin"
         expand="block"
         type="submit"
         >Submit</ion-button
       >
     </form>
-    <div class="ion-text-center">
-      {{email}}
-      <br />
-      {{password}}
-      <br />
-      {{loginForm.status}}
-    </div>
   </div>
 </ion-content>
