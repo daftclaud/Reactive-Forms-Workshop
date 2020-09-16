@@ -32,7 +32,6 @@ export class ReactiveSignupPage implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.minLength(6), Validators.required]],
       confirm: ['', [Validators.minLength(6), Validators.required]],
-      apodos: this.fb.array([''])
     },
     { validators: passwordsMatchValidator }
   );
@@ -47,13 +46,6 @@ export class ReactiveSignupPage implements OnInit {
     );
   }
 
-  addApodo() {
-    this.apodos.push(this.fb.control(''));
-  }
-
-  get apodos() {
-    return this.loginForm.controls.apodos as FormArray;
-  }
   get email() {
     return this.loginForm.controls.email;
   }
